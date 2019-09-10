@@ -1,2 +1,2 @@
-# azezet.github.io
+# azerzet.github.io
 Azerzet
