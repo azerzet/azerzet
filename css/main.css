@@ -652,16 +652,4 @@ header nav ul li a.bordered {
   color: #00ffff;
 }
 
-.col-1 {
-border-radius: 10px;
-border: 5px #00ffff solid;
-box-shadow: 0 0 10px #444;
-}
-
-.col-2 {
-border-radius: 10px;
-border: 5px #00ffff solid;
-box-shadow: 0 0 10px #444;
-}
-
 /*# sourceMappingURL=main.css.map */
