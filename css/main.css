@@ -652,7 +652,13 @@ header nav ul li a.bordered {
   color: #00ffff;
 }
 
-.fot_1 .fot_2 .fot_3 {
+.col-1 {
+border-radius: 10px;
+border: 5px #00ffff solid;
+box-shadow: 0 0 10px #444;
+}
+
+.col-2 {
 border-radius: 10px;
 border: 5px #00ffff solid;
 box-shadow: 0 0 10px #444;
