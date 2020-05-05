@@ -174,14 +174,18 @@ html, button, input, select, textarea {
   font-family: sans-serif;
 }
 
+
+/* 
 a:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 a:hover, a:active {
-  outline: 0;
+  outline: 0; 
 }
+
+ */
 
 abbr[title] {
   border-bottom: 1px dotted;
