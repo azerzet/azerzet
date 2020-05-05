@@ -142,6 +142,7 @@ time, mark, audio, video {
   outline: 0;
   vertical-align: baseline;
   background: transparent;
+  text-decoration: none;
 }
 
 html, body {
