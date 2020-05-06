@@ -1,5 +1,9 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
+a {
+  text-decoration: none;
+}
+
 /* МЕНЮ */
 .mobile-menu {
   position: fixed;
@@ -70,18 +74,22 @@
   list-style: none;
   padding-left: 0;
   margin-top: -50px;
+  
 }
 .mobile-menu__item {
   font-size: 26px;
   padding-bottom: 15px;
 }
+
 .mobile-menu__link {
   text-decoration: none;
   color: #fff;
+  
 }
 .mobile-menu__checkbox {
   display: none;
 }
+
 .mobile-menu__checkbox:checked ~ .mobile-menu__nav {
   opacity: 1;
   transition-delay: 0s;
@@ -118,6 +126,7 @@
     margin: 0 10px 10px 0;
     padding: 6px;
     color: #000;
+  
 }
 
 .instagram a:hover {background: #22272a; color: #fff;}
