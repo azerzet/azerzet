@@ -1,9 +1,5 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
-a {
-  text-decoration: none;
-}
-
 /* МЕНЮ */
 .mobile-menu {
   position: fixed;
@@ -459,10 +455,6 @@ cite:before {
 body {
   padding-left: 1em;
   padding-right: 1em;
-}
-
-a {
-  border-bottom: 1px solid #ced9e0;
 }
 
 a:hover {
