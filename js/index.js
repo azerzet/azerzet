@@ -29,8 +29,8 @@ var todolist = new Vue({
         newitem: '',
         sortByStatus: false,
         todo: [
-            { id: 1, label: "Learn English B1", done: false },
-            { id: 2, label: "Code ios-engineering", done: false },
+            { id: 1, label: "learn English B1", done: false },
+            { id: 2, label: "career ios-engineer", done: false },
         ]
     },
     methods: {
