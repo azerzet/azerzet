@@ -30,7 +30,7 @@ var todolist = new Vue({
         sortByStatus: false,
         todo: [
             { id: 1, label: "English - learn B1", done: false },
-            { id: 2, label: "Career - iOS-Engineer", done: false },
+            { id: 2, label: "Programming - iOS-Engineer", done: false },
         ]
     },
     methods: {
