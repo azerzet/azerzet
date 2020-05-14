@@ -128,9 +128,3 @@ body {
 .description__text {
   margin-right: 0.25rem;
 }
-
-.loveSvg svg {
-  display: block;
-  height: 1rem;
-  max-width: 1rem;
-}
