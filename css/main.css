@@ -1,333 +1,166 @@
-/* The component will reset button browser styles */
+/*
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * MIT License
+ *
+ *
+ * If you are thinking of using this in
+ * production code, beware of the browser
+ * prefixes.
+ */
 
-.r-button{
-  --uirButtonBackgroundColor: var(--rButtonBackgroundColor, transparent);
-  --uirButtonPadding: var(--rButtonPadding, var(--rButtonPaddingTop, 0) var(--rButtonPaddingRight, 0) var(--rButtonPaddingBottom, 0) var(--rButtonPaddingLeft, 0));
-  --uirButtonBorderWidth: var(--rButtonBorderWidth, 0);
-  --uirButtonBorderStyle: var(--rButtonBorderStyle, solid);
-  --uirButtonBorderColor: var(--rButtonBorderColor, currentColor);
-  --uirButtonFontFamily: var(--rButtonFontFamily, inherit);
-  --uirButtonFontSize: var(--rButtonFontSize,  inherit);
-  --uirButtonColor: var(--rButtonColor);
-
-  background-color: var(--uirButtonBackgroundColor);
-  padding: var(--uirButtonPadding);
-
-  border-width: var(--uirButtonBorderWidth);
-  border-style: var(--uirButtonBorderStyle);
-  border-color: var(--uirButtonBorderColor);
-
-  cursor: pointer;
-
-  font-family: var(--uirButtonFontFamily);
-  font-size: var(--uirButtonFontSize);
-}
-
-.r-button::-moz-focus-inner,
-.r-button[type="button"]::-moz-focus-inner,
-.r-button[type="reset"]::-moz-focus-inner,
-.r-button[type="submit"]::-moz-focus-inner {
-  
-  /* Remove the inner border and padding in Firefox. */
-  
-  border-style: none;
+body
+{
+  margin: 0;
   padding: 0;
-}
-
-/* The component will reset browser's styles of link */
-
-.r-link{
-    --uirLinkDisplay: var(--rLinkDisplay, inline-flex);
-    --uirLinkTextColor: var(--rLinkTextColor);
-    --uirLinkTextDecoration: var(--rLinkTextDecoration, none);
-
-    display: var(--uirLinkDisplay) !important;
-    color: var(--uirLinkTextColor) !important;
-    text-decoration: var(--uirLinkTextDecoration) !important;
-}
-
-/* The component will reset browser's styles of list */
-
-.r-list{
-    --uirListPaddingLeft: var(--rListPaddingLeft, 0);
-    --uirListMarginTop: var(--rListMarginTop, 0);
-    --uirListMarginBottom: var(--rListMarginBottom, 0);
-    --uirListListStyle: var(--rListListStyle, none);
-
-    padding-left: var(--uirListPaddingLeft) !important;
-    margin-top: var(--uirListMarginTop) !important;
-    margin-bottom: var(--uirListMarginBottom) !important;
-    list-style: var(--uirListListStyle) !important;
-}
-
-/* Basic styles of the hamburger component */
-
-.m-hamburger{
-  --uiHamburgerDisplay: var(--hamburgerDisplay, inline-flex);
-  --uiHamburgerWidth: var(--hamburgerWidth, 28px);
-  --uiHamburgerHeight: var(--hamburgerHeight, 20px);
-  --uiHamburgerThickness: var(--hamburgerThickness, 4px);
-  --uiHamburgerBorderRadius: var(--hamburgerBorderRadius, 5px);
-  --uiHamburgerBgColor: var(--hamburgerBgColor, currentColor);
-
-  display: var(--uiHamburgerDisplay);
-  width: var(--uiHamburgerWidth);
-  height: var(--uiHamburgerHeight);
-
-  position: relative;
-  text-indent: -9999px;
-}
-
-.m-hamburger::before, 
-.m-hamburger::after, 
-.m-hamburger__label{
-  width: 100%;
-  height: var(--uiHamburgerThickness);
-  border-radius: var(--uiHamburgerBorderRadius);
-  background-color: var(--uiHamburgerBgColor);
-
-  position: absolute;
-  left: 0;
-}
-
-.m-hamburger::before, 
-.m-hamburger::after{
-  content:"";
-}
-
-.m-hamburger::before{
-  top: 0;
-}
-
-.m-hamburger::after{
-  bottom: 0;
-}
-
-.m-hamburger__label{
-  /* The calculation of middle hamburger button line position */
   
-  top: calc(50% - calc(var(--uiHamburgerThickness) / 2));
+  /* make it look decent enough */
+  background: #00ffff;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
 }
 
-/*
-=====
-MENU STYLES
-=====
-*/
-
-.menu{
-  --uiMenuCircleSize: var(--menuCircleSize, 100px);
-  --uiMenuCircleOffset: var(--menuCircleOffset, 10px);
-  --uiMenuCircleBgColor: var(--menuCircleBgColor, currentColor);
-
-  --hamburgerWidth: var(--menuHamburgerWidth, 28px);
-  --hamburgerHeight: var(--menuHamburgerHeight, 20px);
-  --hamburgerBgColor: var(--menuHamburgerBgColor, #fff);
-
-  box-sizing: border-box;
-  width: 100%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;  
-
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 9998;
-}
-
-.menu__nav{
-  box-sizing: border-box;
-  width: 100%;
-  height: 0;
-
-  transition: opacity .2s ease-out;
-  opacity: 0;
-
-  display: flex;
-  align-items: flex-end;
-  z-index: 2;
-}
-
-.menu__list{
-  width: 100%;
-  max-height: 100%;
-  display: none;
-
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.menu__toggle{
-  box-sizing: border-box;
-  width: var(--uiMenuCircleSize);
-  height: calc(var(--uiMenuCircleSize) / 2);
-  padding: var(--uiMenuCircleOffset);
-
-  flex: none;
-
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.menu__toggle::before{
-  /*
-  1. The font-size property is used to simplify calculations of the element's sizes and position
-  2. The negative value for the bottom property need for hiding half of circle. 
-  */
-
-  content: "";
-  width: 1em;
-  height: 1em;
-  font-size: var(--uiMenuCircleSize); /* 1 */
-
-  background-color: var(--uiMenuCircleBgColor);
-  border-radius: 50%;
-
-  position: absolute;
-  bottom: -.5em; /* 2 */
-  left: calc(50% - .5em);
-
-  will-change: width, height;
-  transition: transform .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
-    width .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
-    height .25s cubic-bezier(0.04, -0.1, 0.29, 0.98);
-}
-
-.menu__hamburger::before{
-  /* Increase of click button area   */
-
-  content: "";
-  width: 100%;
-  height: 100%;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* styles of hamburger's animation */
-
-.m-hamburger::before, 
-.m-hamburger::after, 
-.m-hamburger__label{
-  transition-timing-function: ease;
-  transition-duration: .15s;  
-}
-
-.m-hamburger::before, 
-.m-hamburger::after{
-  transition-property: transform;
-}
-
-.m-hamburger__label{
-  transition-property: transform, opacity;
-}
-
-/*
-=====
-MENU STATES
-=====
-*/
-
-.menu__hamburger:focus{
-  outline: none;
-}
-
-.menu_activated{
-  height: 100%;
-}
-
-.menu_activated .menu__nav{
-  height: 100%;
-  opacity: 1;
-
-  will-change: opacity;
-  transition-duration: .2s;
-  transition-delay: .3s;
-}
-
-.menu_activated .menu__toggle::before{
-  width: 100vmax;
-  height: 100vmax;
-  transform: translate3d(-50vh, -50vh, 0) scale(5);
-  transition-duration: 1s;
-}
-
-.menu_activated .menu__list{
+#menuToggle
+{
   display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-.menu_activated .m-hamburger::before{
-  top: 50%;
-  transform: translate3d(0, -50%, 0) rotate(45deg);
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
 }
 
-.menu_activated .m-hamburger::after{
-  transform: translate3d(0, -50%, 0) rotate(135deg);
-  top: 50%;
+#menuToggle a:hover
+{
+  color: tomato;
 }
 
-.menu_activated .m-hamburger__label{
-  transform: rotate(-45deg) translate3d(-.285em,-.3em, 0);
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
   opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
 }
 
 /*
-=====
-SETTINGS
-=====
-*/
-
-:root{
-  --colorWhite: #fff;
-  --colorMain: #222;
-  --rLinkTextColor: var(--colorMain);
-  --menuCircleSize: 100px;
-  --menuCircleBgColor: var(--colorMain);
-  --menuHamburgerWidth: 28px;
-  --menuHamburgerHeight: 20px;
-  --menuHamburgerBgColor: var(--colorWhite);
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
 }
 
 /*
-=====
-DEMO
-=====
-*/
-
-@media (min-width: 768px){
-
-  html{
-    font-size: 62.5%;
-  }
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
-@media (max-width: 767px){
-
-  html{
-    font-size: 50%;
-  }
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
 }
 
-
-
-
-.menu__group{
-  --rLinkTextColor: var(--colorWhite);
-
-  padding: .5rem 3rem; 
-  font-size: 3.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
 }
-
-
-
-
 
 /* МЕНЮ */
 
