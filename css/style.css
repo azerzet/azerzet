@@ -4,7 +4,7 @@
 	box-sizing:border-box;
 }
 html, body {
-	background:#22272a;
+	background:#222;
 	font-size:1.1rem;
 	font-family:'Quicksand', sans-serif;
 	height:100%;
@@ -23,7 +23,7 @@ html, body {
 	margin:4rem auto;
 	padding:2rem 3rem 3rem;
 	max-width:500px;
-	background:#22272a;
+	background:#222;
 	color:#FFF;
 	/* box-shadow:-20px -20px 0px 0px rgba(100,100,100,.1); */
 }
