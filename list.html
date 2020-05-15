@@ -3,52 +3,28 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Notes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
-  
-      <link rel="stylesheet" href="css/style.css">
+  <title>Az/Game</title>
+  <meta name="viewport" content="width=device-width,user-scalable=no">
+  <link rel="stylesheet" href="css/style.css">
   
 </head>
 
 <body>
 
-  <main id="todolist">
-  <h1>
-    Notes
-    <span>Get things done, one item at a time.</span>
-  </h1>
-
-  <template v-if="todo.length">
-    <transition-group name="todolist" tag="ul">
-      <li v-for="item in todoByStatus" v-bind:class="item.done ? 'done' : ''" v-bind:key="item.id">
-        <span class="label">{{item.label}}</span>
-        <div class="actions">
-          <button class="btn-picto" type="button" v-on:click="markAsDoneOrUndone(item)" v-bind:aria-label="item.done ? 'Undone' : 'Done'" v-bind:title="item.done ? 'Undone' : 'Done'">
-            <i aria-hidden="true" class="material-icons">{{ item.done ? 'check_box' : 'check_box_outline_blank' }}</i>
-          </button>
-          <button class="btn-picto" type="button" v-on:click="deleteItemFromList(item)" aria-label="Delete" title="Delete">
-            <i aria-hidden="true" class="material-icons">delete</i>
-          </button>
-        </div>
-      </li>
-    </transition-group>
-    <togglebutton 
-                  label="Move done items at the end?"
-                  name="todosort"
-                  v-on:clicked="clickontoogle" />
-  </template>
-  <p v-else class="emptylist">Your todo list is empty.</p>
-
-  <form name="newform" v-on:submit.prevent="addItem">
-    <label for="newitem">Add to the todo list</label>
-    <input type="text" name="newitem" id="newitem" v-model="newitem">
-    <button type="submit">Add item</button>
-  </form>
-</main>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
+<div id="container">
+	<div id="game"></div>
+	<div id="score">0</div>
+	<div id="instructions">Click (or press the spacebar) to place the block</div>
+	<div class="game-over">
+		<h2>WASTED</h2>
+		<p>You did great, you're the best.</p>
+		<p>Click or spacebar to start again</p>
+	</div>
+	<div class="game-ready">
+		<div id="start-button">Start</div>
+		<div></div>
+	</div>
+</div>
 
   
 
