@@ -1,186 +1,135 @@
-* {
-	margin:0;
-	padding:0;
-	box-sizing:border-box;
-}
+@import url("https://fonts.googleapis.com/css?family=Comfortaa");
 html, body {
-	background:#222;
-	font-size:1.1rem;
-	font-family:'Quicksand', sans-serif;
-	height:100%;
-}
-@keyframes strikeitem {
-	to { width:calc(100% + 1rem); }
-}
-
-/* МЕНЮ */
-
-
-/* МЕНЮ */
-
-
-#todolist {
-	margin:4rem auto;
-	padding:2rem 3rem 3rem;
-	max-width:500px;
-	background:#222;
-	color:#FFF;
-	/* box-shadow:-20px -20px 0px 0px rgba(100,100,100,.1); */
-}
-#todolist h1 {
-    /*text-align:center;*/
-    font-weight:normal;
-    font-size:2.6rem;
-    letter-spacing:0.05em;
-    border-bottom:1px solid rgba(255,255,255,.3); 
-}
-#todolist h1 span {
-	display:block;
-	font-size:0.8rem;
-	margin-bottom:0.7rem;
-	margin-left:3px;
-	margin-top:0.2rem;   
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  font-family: 'Comfortaa', cursive;
 }
 
-#todolist .emptylist {
-	margin-top:2.6rem;
-	text-align:center;
-	letter-spacing:.05em;
-	font-style:italic;
-	opacity:0.8;
-	
+#container {
+  width: 100%;
+  height: 100%;
 }
-#todolist ul {
-	margin-top:2.6rem;
-	list-style:none;
+#container #score {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 10vh;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  color: #333344;
+  -webkit-transform: translatey(-200px) scale(1);
+          transform: translatey(-200px) scale(1);
 }
-#todolist .todolist-move {
-	transition: transform 1s;
+#container #game {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
-#todolist li {
-	display:flex;
-	margin:0 -3rem 4px;
-	padding:1.1rem 3rem;
-	justify-content:space-between;
-	align-items:center;
-	background:rgba(255,255,255,0.1);
+#container .game-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
-
-#todolist .actions {
-	flex-shrink:0;
-	padding-left:0.7em;
+#container .game-over * {
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  opacity: 0;
+  -webkit-transform: translatey(-50px);
+          transform: translatey(-50px);
+  color: #333344;
 }
-#todolist .label {
-	position:relative;
-	transition:opacity .2s linear;
+#container .game-over h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
 }
-#todolist .done .label {
-	opacity:.6;
+#container .game-ready {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  justify-content: space-around;
 }
-#todolist .done .label:before {
-	content:'';
-	position:absolute;
-	top:50%;
-	left:-.5rem;
-	display:block;
-	width:0%;
-	height:1px;
-	background:#FFF;
-	animation:strikeitem .3s ease-out 0s forwards;
+#container .game-ready #start-button {
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  opacity: 0;
+  -webkit-transform: translatey(-50px);
+          transform: translatey(-50px);
+  border: 3px solid #333344;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #333344;
+  font-size: 30px;
 }
-#todolist .btn-picto {
-	border:none;
-	background:none;
-	-webkit-appearance:none;
-	cursor:pointer;
-	color:#FFF;
+#container #instructions {
+  position: absolute;
+  width: 100%;
+  top: 16vh;
+  left: 0;
+  text-align: center;
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  opacity: 0;
 }
-
-
-/* FORM */
-form {
-	margin-top:3rem;
-	display:flex;
-	flex-wrap:wrap;
+#container #instructions.hide {
+  opacity: 0 !important;
 }
-form label {
-	min-width:100%;
-	margin-bottom:.5rem;
-	font-size:1.3rem;
+#container.playing #score, #container.resetting #score {
+  -webkit-transform: translatey(0px) scale(1);
+          transform: translatey(0px) scale(1);
 }
-form input {
-	flex-grow:1;
-	border:none;
-	background:#f7f1f1;
-	padding:0 1.5em;
-	font-size:initial;
+#container.playing #instructions {
+  opacity: 1;
 }
-form button {
-	padding:0 1.3rem;
-	border:none;
-	background:#615e5e;
-	color:white;
-	text-transform:uppercase;
-	font-weight:bold;
-	border:1px solid rgba(255,255,255,.3);
-	margin-left:5px;
-	cursor:pointer;
-	transition:background .2s ease-out;
+#container.ready .game-ready #start-button {
+  opacity: 1;
+  -webkit-transform: translatey(0);
+          transform: translatey(0);
 }
-form button:hover {
-	background:#00ffff;
+#container.ended #score {
+  -webkit-transform: translatey(6vh) scale(1.5);
+          transform: translatey(6vh) scale(1.5);
 }
-form input, 
-form button {
-	font-family:'Quicksand', sans-serif;
-	height:3rem;
+#container.ended .game-over * {
+  opacity: 1;
+  -webkit-transform: translatey(0);
+          transform: translatey(0);
 }
-
-
-/* TOOGLE COMPONENT */
-.togglebutton-wrapper {
-	margin-top:1em;
-}
-.togglebutton-wrapper label {
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-}
-.togglebutton-wrapper input {
-	position:absolute;
-    left:-9999px;
-}
-.togglebutton-wrapper .togglebutton-label {
-	font-size:.8rem;
-	letter-spacing:.1em
-}
-.togglebutton-wrapper .tooglebutton-box {
-	position:relative;
-	display:block;
-	margin-left:0.6em;
-	width:38px;
-	height:22px;
-	background:white;
-	/*border:1px solid black;*/
-	border-radius:999px;
-	cursor:pointer;
-}
-.togglebutton-wrapper .tooglebutton-box:before {
-	content:'';
-	position:absolute;
-	top:2px; left:2px;
-	display:block;
-	width:18px; height:18px;
-	/*border:1px solid #FF6666;*/
-	border-radius:50%;
-	background:#615e5e;
-	opacity:0.7;
-	transition:	all .2s ease-in-out;
-}
-.togglebutton-wrapper.togglebutton-focus .tooglebutton-box {
-	/* box-shadow:0px 0px 0px 3px rgba(0,0,0,0.1); */
-}
-.togglebutton-wrapper.togglebutton-checked .tooglebutton-box:before {
-	left:calc(100% - 4px - 16px);
-	opacity:1;
+#container.ended .game-over p {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
