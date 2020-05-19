@@ -1,8 +1,8 @@
 body,html{height:100%;width:100%;overflow-x:hidden}
-body{font:normal normal 14px/19px Arial,sans-serif;letter-spacing:1px;margin:0;background:#111}
+body{font:normal normal 14px/19px Arial,sans-serif;letter-spacing:1px;margin:0;background:#fff}
 ::-moz-selection{background:#2D3363;color:#FAEECF}
 ::selection{background:#2D3363;color:#FAEECF}
-.text{position:absolute;bottom:20px;left:25px;color:#ffffff;font-family:Arial,sans-serif;text-transform:uppercase;font-size:14px;line-height:28px;font-weight:bold;letter-spacing:2px;z-index:99}
+.text{position:absolute;bottom:20px;left:25px;color:#000;font-family:Arial,sans-serif;text-transform:uppercase;font-size:14px;line-height:28px;font-weight:bold;letter-spacing:2px;z-index:99}
 a{color:#6172BA;text-decoration:none;cursor:pointer}
 a:hover{text-decoration:underline}
 .vader{position:absolute;top:50%;left:50%;display:inline-block;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
@@ -97,7 +97,7 @@ a:hover{text-decoration:underline}
   justify-content: flex-end;
   padding: 0 16px;
   top: 0;
-  background-color: #111;
+  background-color: #fff;
   left: 0;
   right: 0;
   height: 50px;
@@ -125,7 +125,7 @@ a:hover{text-decoration:underline}
   content: "";
   display: block;
   position: absolute;
-  background: white;
+  background: #000;
   width: 100%;
   height: 4px;
   transition: 0.4s;
@@ -151,7 +151,7 @@ a:hover{text-decoration:underline}
   transition: 0.5s;
   transition-delay: 0.2s;
   overflow: hidden;
-  background-color: #111;
+  background-color: #fff;
 }
 .mobile-menu__list {
   transition: 0.5s;
@@ -165,12 +165,11 @@ a:hover{text-decoration:underline}
   padding-bottom: 15px;
   font-family:Arial,sans-serif;
   font-size:24px;
-  
   font-weight:bold;
 }
 .mobile-menu__link {
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }
 .mobile-menu__checkbox {
   display: none;
