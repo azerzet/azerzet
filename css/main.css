@@ -3,7 +3,7 @@ body {
   height: 100vh;
   overflow: hidden;
   display: flex;
-  font-family: "Roboto", monospace;
+  font-family: "DM Sans", sans-serif;
   user-select: none;
 }
 main {
