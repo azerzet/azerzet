@@ -1,5 +1,73 @@
-body,html{height:100%;width:100%;overflow-x:hidden}
-body{font:normal normal 14px/19px Arial,sans-serif;letter-spacing:1px;margin:0;background:#fff}
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: #f2f5f7;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  padding: 1rem;
+}
+
+.post {
+  display: -webkit-box;
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  max-width: 400px;
+  position: relative;
+  padding: 2rem;
+  box-shadow: inset 0 0 0 4px #000, inset -4px -4px 0 6px #CCC;
+  background-color: #FFF;
+  cursor: pointer;
+}
+.post:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  -webkit-transform-origin: 0 bottom 0;
+          transform-origin: 0 bottom 0;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transition: .4s ease-out;
+  transition: .4s ease-out;
+}
+.post:hover .post-title {
+  color: #FFF;
+}
+.post:hover:before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+.post-title {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.333;
+  -webkit-transition: .4s ease-out;
+  transition: .4s ease-out;
+}
+
 
 .mobile-menu {
   position: fixed;
