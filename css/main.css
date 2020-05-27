@@ -3,7 +3,7 @@ body {
   height: 100vh;
   overflow: hidden;
   display: flex;
-  font-family: "Poppins", monospace;
+  font-family: "Roboto", monospace;
   user-select: none;
 }
 main {
@@ -11,7 +11,7 @@ main {
   flex: 1;
   justify-content: center;
   align-items: center;
-  background: #f0eef5;
+  background: #fff;
 }
 .text {
   color: #141312;
