@@ -122,8 +122,6 @@
 
 body{
   background: var(--background-color);
-  width: hidden;
-  heidth: hidden;
 }
 
 .box-canvas{
