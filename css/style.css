@@ -1,1 +1,104 @@
+:root {
+  --m-scale: 1.1;
+  --font-m: 1rem;
+  --font-l: calc(1rem * var(--m-scale));
+  --font-xl: calc(1rem * var(--m-scale) * var(--m-scale));
+  --font-xxl: calc(1rem * var(--m-scale) * var(--m-scale) * var(--m-scale));
+}
+@media screen and (min-width: 20em) {
+  :root {
+    --m-scale: 1.2;
+  }
+}
+@media screen and (min-width: 30em) {
+  :root {
+    --m-scale: 1.3;
+  }
+}
+@media screen and (min-width: 40em) {
+  :root {
+    --m-scale: 1.5;
+  }
+}
+
+html {
+  font-size: 100%;
+}
+@media screen and (min-width: 40em) {
+  html {
+    font-size: calc(100% + 0.25vw + 0.25vh);
+  }
+}
+
+h1 {
+  font-size: var(--font-xxl);
+  margin-bottom: 1em;
+  position: relative;
+}
+h1:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25em;
+  height: 0.14em;
+  width: 3em;
+  background: #DC9555;
+}
+
+h2 {
+  font-size: var(--font-xl);
+  margin-bottom: 0.5em;
+  margin-top: calc(var(--m-scale) * 1em);
+}
+
+p {
+  font-size: var(--font-m);
+  margin: 0 0 1em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 42em;
+}
+
+.numbers {
+  font-size: calc(1rem + 0.5vw);
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  padding: 1em;
+  background: #ccc;
+  border-radius: 0.5em;
+}
+.numbers dl {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-gap: 0.5em 1em;
+}
+.numbers dd, .numbers dt {
+  margin: 0;
+  padding: 0;
+}
+.numbers dt {
+  text-align: right;
+  font-weight: bold;
+}
 
