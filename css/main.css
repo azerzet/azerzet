@@ -109,103 +109,57 @@
 
 /* CSS CUBE*/
 
-:root {
-  --background-color: #FFF;
-  --blue: #000;
-  --red: #00FFFF;
-  --yellow: #FFFF00;
-  --orange: #FFF0;
-  --white: #222;
-  --green: #0a14cf;
-  --in-between-color: #767C87;
+*, *:after, *:before {
+  box-sizing: border-box;
 }
 
-body{
-  background: var(--background-color);
+body {
+  font-family: "Inter", sans-serif;
 }
 
-.box-canvas{
-  position: relative;
-  margin: auto;
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+button {
   display: block;
-  margin-top: 8%;
-  margin-bottom: 8%;
-  width: 600px;
-  height:600px;
-  background: var(--background-color);
-  perspective: 800px;
+  font: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border: 2px solid #000;
+  backgrond-color: #FFF;
+  padding: 1rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border-radius: .25rem;
+  box-shadow: 4px 4px 0 0 #000;
+  -webkit-transition: .15s ease;
+  transition: .15s ease;
 }
-
-@keyframes rotateCube {
-  0% {
-    transform: rotateX(0) rotateY(0);
-  }
-
-  100% {
-    transform: rotateX(360deg) rotateY(360deg);
-  }
-}
-
-.cube {
-  position:relative;
-  margin: auto;
-  margin-top: 200px;
-  width: 200px;
-  height: 200px;
-  transform-style: preserve-3d;
-  animation: rotateCube 10s infinite;
-}
-
-.side {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-}
-
-.side::before {
-  content: '';
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  transform: rotate(90deg);
-  background: repeating-linear-gradient(to right, var(--in-between-color)  0, var(--in-between-color)  2px, transparent 2px, transparent 66px, var(--in-between-color) 66px, var(--in-between-color) 68px, transparent 68px, transparent 132px, var(--in-between-color) 132px);
-}
-
-.back {
-  transform: translateZ(-100px);
-  background: repeating-linear-gradient(to right, var(--in-between-color) 0, var(--in-between-color) 2px, var(--blue) 2px, var(--blue)  66px, var(--in-between-color) 66px, var(--in-between-color) 68px, var(--blue) 68px, var(--blue) 132px, var(--in-between-color) 132px);
-}
-
-
-.left {
-  transform: translateX(-100px) rotateY(90deg);
-   background: repeating-linear-gradient(to right, var(--in-between-color)  0, var(--in-between-color)  2px, var(--yellow) 2px, var(--yellow)  66px, var(--in-between-color) 66px, var(--in-between-color)  68px, var(--yellow) 68px, var(--yellow) 132px, var(--in-between-color)  132px);
-}
-
-
-
-.right {
-  transform: translateX(100px) rotateY(90deg);
-   background: repeating-linear-gradient(to right, var(--in-between-color)  0, var(--in-between-color) 2px, var(--red) 2px, var(--red)  66px, var(--in-between-color)  66px, var(--in-between-color) 68px, var(--red) 68px, var(--red) 132px, var(--in-between-color) 132px);
-}
-
-.top {
-  transform: translateY(-100px) rotateX(90deg);
-   background: repeating-linear-gradient(to right, var(--in-between-color) 0, var(--in-between-color) 2px, var(--green) 2px, var(--green) 66px, var(--in-between-color) 66px, var(--in-between-color)  68px, var(--green)  68px, var(--green) 132px, var(--in-between-color) 132px);
-}
-
-.bottom {
-  transform: translateY(100px) rotateX(90deg);
-   background: repeating-linear-gradient(to right, var(--in-between-color) 0, var(--in-between-color) 2px, var(--white) 2px, var(--white) 66px, var(--in-between-color) 66px, var(--in-between-color)  68px, var(--white)  68px, var(--white) 132px, var(--in-between-color) 132px);
-}
-
-.front {
-  transform: translateZ(100px);
-   background: repeating-linear-gradient(to right, var(--in-between-color) 0, var(--in-between-color) 2px, var(--orange) 2px, var(--orange) 66px, var(--in-between-color) 66px, var(--in-between-color) 68px, var(--orange) 68px, var(--orange) 132px, var(--in-between-color)  132px);
+button:hover, button:focus {
+  outline: 0;
+  -webkit-transform: translate(4px, 4px);
+          transform: translate(4px, 4px);
+  box-shadow: 0 0 0 0 #000;
+  background-color: #f2f5f7;
 }
 
 p {
-  margin-left: 13px;
-  color: #FFF;
-  font-size: 18px;
+  font-size: .875rem;
+  margin-top: 2rem;
 }
