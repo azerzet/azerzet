@@ -143,6 +143,7 @@ h1 {
   font-size: var(--font-xxl);
   margin-bottom: 1em;
   position: relative;
+  padding-top: 20px;
 }
 h1:after {
   content: "";
@@ -150,7 +151,7 @@ h1:after {
   left: 0;
   bottom: -0.25em;
   height: 0.14em;
-  width: 3em;
+  width: 4em;
   background: #DC9555;
 }
 
