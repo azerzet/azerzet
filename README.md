@@ -1,2 +1,2 @@
 # azerzet.github.io
-Azerzet. The personal site about me and my it-career.
+The personal site about me and my it-career.
