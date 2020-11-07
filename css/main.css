@@ -4,4 +4,10 @@ body {
 font-family: 'Itim', cursive;
 }
 
+.css-adaptive {
+display: block;
+max-width: 100%;
+height: auto;
+}
+
 /* Нахер ваш CSS! */
