@@ -1,2 +1,4 @@
 # azerzet.ru
-We must code 💪
+# t.me/swift_er
+Hi, IOS programmer. 
+Swift and objective-c
