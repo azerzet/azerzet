@@ -1,4 +1,6 @@
 # azerzet.ru
-# Must Code
 Hi, IOS programmer.
+From: EKB
+Expirience: Swift, Objective-C
+Use: Xcode
 
